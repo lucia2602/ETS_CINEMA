@@ -18,10 +18,10 @@ public class Act_Cine {
 		do {
 			do {
 				//Mensaje de menu
-				menu=Integer.parseInt(JOptionPane.showInputDialog(null, "Introduzca el nº que desea consultar: "
-						+ "\n 1_Reservar butacas: "
+				menu=Integer.parseInt(JOptionPane.showInputDialog(null, "Introduzca el nÂº que desea consultar: "
+						+ "\n 1_Reservar asientos: "
 						+ "\n 2_Cancelar la reserva: "
-						+ "\n 3_Consultar cuantas butacas libres quedan: "
+						+ "\n 3_Consultar cuantos asientos libres quedan: "
 						+ "\n 4_EXIT"));
 				
 			} while (menu !=1 && menu !=2 && menu !=3 && menu !=4);
@@ -33,9 +33,9 @@ public class Act_Cine {
 				if (sala.consultas()>0) {
 					
 				//Mensajes de reserva
-				int Asientos_reservados=Integer.parseInt(JOptionPane.showInputDialog("¿CUANTAS BUTACAS QUIERE RESERVAR?"));
+				int Asientos_reservados=Integer.parseInt(JOptionPane.showInputDialog("Â¿CUANTOS ASIENTOS QUIERE RESERVAR?"));
 				sala.reservas(Asientos_reservados);
-				JOptionPane.showMessageDialog(null, "HA RESERVADO " + sala.consultas() + "BUTACAS EN TOTAL");
+				JOptionPane.showMessageDialog(null, "HA RESERVADO " + sala.consultas() + "ASIENTOS EN TOTAL");
 				
 				} else
 					JOptionPane.showInternalMessageDialog(null, "SIN ASIENTOS DISPONIBLES, VUELVA EN OTRO MOMENTO");
@@ -46,9 +46,9 @@ public class Act_Cine {
 				if (sala.consultas()>Total_asientos) {
 					
 					//Mensajes de cancelacion
-					int Asientos_cancelados=Integer.parseInt(JOptionPane.showInputDialog("¿DESEA CANCELAR LA RESERVA?"));
+					int Asientos_cancelados=Integer.parseInt(JOptionPane.showInputDialog("Â¿DESEA CANCELAR LA RESERVA?"));
 					sala.cancelacion(Asientos_cancelados);
-					JOptionPane.showMessageDialog(null, "HAS CANCELADO " + sala.consultas() + "BUTACAS EN TOTAL");
+					JOptionPane.showMessageDialog(null, "HAS CANCELADO " + sala.consultas() + "ASIENTOS EN TOTAL");
 					
 					} else
 						JOptionPane.showInternalMessageDialog(null, "SIN RESERVAS, VUELVA EN OTRO MOMENTO");
@@ -56,7 +56,7 @@ public class Act_Cine {
 				
 			//CONSULTAR
 			case 3:
-				JOptionPane.showMessageDialog(null, "HAY " + sala.consultas() + " BUTACAS LIBRES");
+				JOptionPane.showMessageDialog(null, "HAY " + sala.consultas() + " ASIENTOS LIBRES");
 			break;
 				
 			//SALIR
@@ -68,7 +68,5 @@ public class Act_Cine {
 			
 		//SALIR DEL MENU
 		} while (flag==true);
-
 	}
-
 }
